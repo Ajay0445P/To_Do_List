@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <title>
+    To Do List
+  </title>
+  <link rel="stylesheet" href="To-do-list.css">
+</head>
+
+<body>
+  <h2 id="heading">TODO LIST</h2>
+  <p>
+    <input class=" search" placeholder="Search note...">
+
+    <button class="search-btn"  id="search-button"><img src="images/magnifying-glass.png" class="search-icon"></button>
+
+    <button id="select-button" >
+      <select onchange="sort()" id="options" name="options">
+        <option class="status" value="All">All</option>
+        <option class="status" value="Complete">Complete</option>
+        <option class="status" value="Incomplete">Incomplete</option>
+      </select></button>
+
+    <button class="dark-mode-btn" onclick="dark_light()" id="dark-mode-button"><img src="images/moon.png" id="dark-mode-icon"></button>
+
+    <button onclick="opentab()" id="add-note-button" ><img src="images/plus.png" id="add-note-icon"></button>
+  </p>
+    <div class="hidden tab js-tab">
+      <div class="tab-box">
+        <h2>NEW NOTE</h2>
+        <input type="text" class="list-input js-input" placeholder="Insert Your Note...">
+        <div class="tab-action">
+          <button class="cancel-btn" onclick="closetab()" >Cancel</button>
+          <button class="add-btn" onclick="add()">Add</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div  class="js-show-list" >Your List</div>
+    
+
+  
+  <script src="To-do-list.js"></script>
+</body>
+
+</html>
