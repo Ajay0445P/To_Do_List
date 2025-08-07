@@ -1,0 +1,251 @@
+body {
+  background-color: purple;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.data {
+  background-color: white;
+  color: black;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+#taskInput {
+  flex: 1;
+  border-radius: 25px;
+  border: none;
+  background-color: rgb(230, 230, 230);
+  padding: 15px 20px;
+  font-size: 1rem;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+#addButton {
+  background-color: #ff5845;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 20px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#addButton:hover {
+  background-color: #e14b3a;
+}
+
+.js-data {
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: black;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  word-break: break-word;
+}
+
+.task-item.animate {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-done {
+  text-decoration: line-through;
+  color: gray;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: white;
+  border: none;
+  color: red;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #d93636;
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .data {
+    padding: 20px 15px;
+  }
+
+  #taskInput,
+  #addButton {
+    width: 100%;
+    border-radius: 20px;
+    font-size: 1rem;
+  }
+
+  .inputContainer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .delete-btn {
+    align-self: flex-end;
+  }
+}
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff5845;
+  cursor: pointer;
+}
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.filter-buttons button {
+  background-color: #eee;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.filter-buttons button:hover {
+  background-color: #ff5845;
+  color: white;
+}
+body.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark .data {
+  background-color: #2a2a2a;
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark #taskInput {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+body.dark .task-item {
+  background-color: #333;
+  color: white;
+}
+
+body.dark .delete-btn {
+  background-color: #3a3a3a;
+  color: red;
+}
+
+body.dark .delete-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+body.dark .filter-buttons button {
+  background-color: #444;
+  color: white;
+}
+
+body.dark .filter-buttons button:hover {
+  background-color: #ff5845;
+  color: white;
+}
+
+/* Toggle Button */
+/* Toggle Button (Light Mode default) */
+.theme-toggle {
+  background-color: white;
+  color: #333;
+  border: 2px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.theme-toggle:hover {
+  background-color: #ff5845;
+  color: white;
+  border-color: #ff5845;
+}
+
+/* Dark mode override */
+body.dark .theme-toggle {
+  background-color: #444;
+  color: white;
+  border: 2px solid #888;
+  box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
+
+body.dark .theme-toggle:hover {
+  background-color: #ff5845;
+  color: white;
+  border-color: #ff5845;
+}
+
